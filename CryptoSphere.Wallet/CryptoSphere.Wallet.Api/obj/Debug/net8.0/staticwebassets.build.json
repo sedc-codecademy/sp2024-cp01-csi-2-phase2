@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "u7cXYeml3ytvXASZpZcsWIPP/zI4wAZ/CEswQdAllAc=",
+  "Source": "CryptoSphere.Wallet.Api",
+  "BasePath": "_content/CryptoSphere.Wallet.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

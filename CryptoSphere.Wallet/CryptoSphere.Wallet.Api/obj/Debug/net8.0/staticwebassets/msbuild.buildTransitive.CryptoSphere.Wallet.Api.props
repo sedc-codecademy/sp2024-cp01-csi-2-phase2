@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\CryptoSphere.Wallet.Api.props" />
+</Project>
