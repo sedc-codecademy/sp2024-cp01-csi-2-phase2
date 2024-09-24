@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\DTOs\" />
-    <Folder Include="Common\Helpers\" />
     <Folder Include="Common\Mappers\" />
     <Folder Include="Repositories\" />
   </ItemGroup>

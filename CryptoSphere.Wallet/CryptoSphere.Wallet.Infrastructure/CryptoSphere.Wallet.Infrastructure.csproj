@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UserService\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CryptoSphere.Wallet.Application\CryptoSphere.Wallet.Application.csproj" />
     <ProjectReference Include="..\CryptoSphere.Wallet.Entities\CryptoSphere.Wallet.Entities.csproj" />
   </ItemGroup>
