@@ -15,6 +15,11 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
         {
             builder.HasKey( x => x.CoinId);
 
+            builder.HasOne(x => x.Wallet)
+                .WithMany(x => x.CryptoCoins)
+                .HasForeignKey(x => x.WalletId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             builder.Property(x=> x.CoinSymbol).IsRequired().HasMaxLength(5);
 
             builder.Property(x => x.Quantity).IsRequired().HasPrecision(5, 2);
@@ -24,7 +29,7 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
 
             CryptoCoin coin = new CryptoCoin()
             {
-                CoinId = Guid.NewGuid(),
+                CoinId = Guid.Parse("AA81F025-F94E-4F15-B4B8-817338C86962"),
                 CoinSymbol = "TST",
                 Quantity = 1,
                 ValueInUSD = 20.05m,

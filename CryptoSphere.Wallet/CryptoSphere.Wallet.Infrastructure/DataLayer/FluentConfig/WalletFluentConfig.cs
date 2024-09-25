@@ -19,7 +19,7 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
                         .HasPrecision(18, 2)
                             .HasDefaultValue(100000m); 
 
-            builder.Property(x => x.CreatedAt).HasDefaultValue(DateTime.UtcNow);
+            builder.Property(x => x.CreatedAt).HasDefaultValue(DateTime.UtcNow).IsRequired();
 
             Wallet.Entities.Wallet wallet = new Entities.Wallet()
             {

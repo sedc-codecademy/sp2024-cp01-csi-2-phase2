@@ -14,5 +14,7 @@ namespace CryptoSphere.Wallet.Entities
         public decimal ValueInUSD {  get; set; }
         public Guid WalletId { get; set; }
         public Wallet Wallet { get; set; }
+
+        public ICollection<Transaction>? Transactions { get; set; }
     }
 }

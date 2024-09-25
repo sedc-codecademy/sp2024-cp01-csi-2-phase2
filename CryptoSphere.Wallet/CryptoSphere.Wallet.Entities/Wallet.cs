@@ -15,5 +15,8 @@ namespace CryptoSphere.Wallet.Entities
         public string? WalletAddress {  get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt {  get; set; }
+
+        public ICollection<Transaction>? Transaction { get; set; }
+        public ICollection<CryptoCoin>? CryptoCoins { get; set; }
     }
 }
