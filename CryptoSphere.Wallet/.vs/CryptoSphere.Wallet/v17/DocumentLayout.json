@@ -3,12 +3,88 @@
   "WorkspaceRootPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.infrastructure\\userservice\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|solutionrelative:cryptosphere.wallet.infrastructure\\userservice\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925111157_AddNewTableExchangeRate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925111157_AddNewTableExchangeRate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.infrastructure\\datalayer\\fluentconfig\\exchangeratefluentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|solutionrelative:cryptosphere.wallet.infrastructure\\datalayer\\fluentconfig\\exchangeratefluentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.infrastructure\\datalayer\\fluentconfig\\transactionfluentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|solutionrelative:cryptosphere.wallet.infrastructure\\datalayer\\fluentconfig\\transactionfluentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.infrastructure\\datalayer\\walletdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|solutionrelative:cryptosphere.wallet.infrastructure\\datalayer\\walletdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.application\\common\\interfaces\\iwalletdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|solutionrelative:cryptosphere.wallet.application\\common\\interfaces\\iwalletdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.entities\\exchangerate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|solutionrelative:cryptosphere.wallet.entities\\exchangerate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.entities\\cryptosphere.wallet.entities.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|solutionrelative:cryptosphere.wallet.entities\\cryptosphere.wallet.entities.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105840_AddTransactionTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105840_AddTransactionTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.infrastructure\\datalayer\\fluentconfig\\cryptocoinfluentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|solutionrelative:cryptosphere.wallet.infrastructure\\datalayer\\fluentconfig\\cryptocoinfluentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105603_AddTransactionTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105603_AddTransactionTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.infrastructure\\datalayer\\fluentconfig\\walletfluentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|solutionrelative:cryptosphere.wallet.infrastructure\\datalayer\\fluentconfig\\walletfluentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925104110_InitCreationOfTransactionTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925104110_InitCreationOfTransactionTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.entities\\enums\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|solutionrelative:cryptosphere.wallet.entities\\enums\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|solutionrelative:cryptosphere.wallet.entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D01E9FF9-A332-4749-B32B-F264AF9DDB19}|CryptoSphere.Wallet.Api\\CryptoSphere.Wallet.Api.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D01E9FF9-A332-4749-B32B-F264AF9DDB19}|CryptoSphere.Wallet.Api\\CryptoSphere.Wallet.Api.csproj|solutionrelative:cryptosphere.wallet.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.entities\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|solutionrelative:cryptosphere.wallet.entities\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.entities\\cryptocoin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|solutionrelative:cryptosphere.wallet.entities\\cryptocoin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.entities\\enums\\transactionstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}|CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj|solutionrelative:cryptosphere.wallet.entities\\enums\\transactionstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.application\\common\\dtos\\userdtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|solutionrelative:cryptosphere.wallet.application\\common\\dtos\\userdtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.application\\common\\dtos\\userdtos\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|solutionrelative:cryptosphere.wallet.application\\common\\dtos\\userdtos\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.infrastructure\\userservice\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}|CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj|solutionrelative:cryptosphere.wallet.infrastructure\\userservice\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.application\\common\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -20,14 +96,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ACER\\AppData\\Roaming\\Microsoft\\UserSecrets\\2025f76c-9880-4128-a3ba-f514e7a7c0a4\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.application\\common\\dtos\\userdtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|solutionrelative:cryptosphere.wallet.application\\common\\dtos\\userdtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.application\\common\\dtos\\userdtos\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|solutionrelative:cryptosphere.wallet.application\\common\\dtos\\userdtos\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0841692A-5587-4971-8FE1-4730602F324C}|CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj|c:\\users\\acer\\desktop\\cryptosphere wallet phase2(git)\\cryptosphere.wallet\\cryptosphere.wallet.application\\common\\helpers\\responsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,37 +117,236 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Api\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Api\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Api\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "CryptoSphere.Wallet.Api\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAgwDYAAAAfAAAA",
+              "DocumentIndex": 0,
+              "Title": "20240925111157_AddNewTableExchangeRate.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925111157_AddNewTableExchangeRate.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925111157_AddNewTableExchangeRate.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925111157_AddNewTableExchangeRate.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925111157_AddNewTableExchangeRate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T15:16:42.388Z",
+              "WhenOpened": "2024-09-25T11:11:57.52Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ExchangeRateFluentConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\ExchangeRateFluentConfig.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\ExchangeRateFluentConfig.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\ExchangeRateFluentConfig.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\ExchangeRateFluentConfig.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T11:07:22.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExchangeRate.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\ExchangeRate.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Entities\\ExchangeRate.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\ExchangeRate.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Entities\\ExchangeRate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T11:05:54.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20240925105840_AddTransactionTable.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105840_AddTransactionTable.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105840_AddTransactionTable.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105840_AddTransactionTable.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105840_AddTransactionTable.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:58:40.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IWalletDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\Common\\Interfaces\\IWalletDbContext.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Application\\Common\\Interfaces\\IWalletDbContext.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\Common\\Interfaces\\IWalletDbContext.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Application\\Common\\Interfaces\\IWalletDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T09:57:32.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WalletDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\WalletDbContext.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\WalletDbContext.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\WalletDbContext.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\WalletDbContext.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAQwA8AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T09:58:13.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TransactionFluentConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\TransactionFluentConfig.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\TransactionFluentConfig.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\TransactionFluentConfig.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\TransactionFluentConfig.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T09:59:06.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CryptoCoinFluentConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\CryptoCoinFluentConfig.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\CryptoCoinFluentConfig.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\CryptoCoinFluentConfig.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\CryptoCoinFluentConfig.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:13:25.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20240925105603_AddTransactionTable.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105603_AddTransactionTable.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105603_AddTransactionTable.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105603_AddTransactionTable.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925105603_AddTransactionTable.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:56:03.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20240925104110_InitCreationOfTransactionTable.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925104110_InitCreationOfTransactionTable.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925104110_InitCreationOfTransactionTable.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925104110_InitCreationOfTransactionTable.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\Migrations\\20240925104110_InitCreationOfTransactionTable.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:41:11.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WalletFluentConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\WalletFluentConfig.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\WalletFluentConfig.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\WalletFluentConfig.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\DataLayer\\FluentConfig\\WalletFluentConfig.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAWwB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:12:32.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CryptoSphere.Wallet.Entities",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj",
+              "RelativeToolTip": "CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-25T09:51:59.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Wallet.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\Wallet.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Entities\\Wallet.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\Wallet.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Entities\\Wallet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:04:49.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Api\\Program.cs",
               "RelativeDocumentMoniker": "CryptoSphere.Wallet.Api\\Program.cs",
               "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Api\\Program.cs",
               "RelativeToolTip": "CryptoSphere.Wallet.Api\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABYAAAA4AAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAABIAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T14:54:13.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
+              "Title": "TransactionType.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\Enums\\TransactionType.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Entities\\Enums\\TransactionType.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\Enums\\TransactionType.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Entities\\Enums\\TransactionType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T09:54:53.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CryptoCoin.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoCoin.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Entities\\CryptoCoin.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoCoin.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Entities\\CryptoCoin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:06:12.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TransactionStatus.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\Enums\\TransactionStatus.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Entities\\Enums\\TransactionStatus.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\Enums\\TransactionStatus.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Entities\\Enums\\TransactionStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T09:56:40.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\ACER\\AppData\\Roaming\\Microsoft\\UserSecrets\\2025f76c-9880-4128-a3ba-f514e7a7c0a4\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\2025f76c-9880-4128-a3ba-f514e7a7c0a4\\secrets.json",
@@ -87,12 +354,24 @@
               "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\2025f76c-9880-4128-a3ba-f514e7a7c0a4\\secrets.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-24T13:50:34.711Z",
+              "WhenOpened": "2024-09-24T13:50:34.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\UserService\\UserService.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\UserService\\UserService.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\UserService\\UserService.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\UserService\\UserService.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAiwBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T13:34:50.855Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 18,
               "Title": "RegisterUserDto.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\Common\\DTOs\\UserDtos\\RegisterUserDto.cs",
               "RelativeDocumentMoniker": "CryptoSphere.Wallet.Application\\Common\\DTOs\\UserDtos\\RegisterUserDto.cs",
@@ -105,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "LogInUserDto.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\Common\\DTOs\\UserDtos\\LogInUserDto.cs",
               "RelativeDocumentMoniker": "CryptoSphere.Wallet.Application\\Common\\DTOs\\UserDtos\\LogInUserDto.cs",
@@ -118,20 +397,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CryptoSphere.Wallet.Application",
+              "DocumentIndex": 25,
+              "Title": "CryptoSphere.Wallet.Application.csproj",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj",
               "RelativeDocumentMoniker": "CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj",
               "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj",
               "RelativeToolTip": "CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-24T13:35:25.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T13:35:25.348Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 24,
               "Title": "ResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\Common\\Helpers\\ResponseModel.cs",
               "RelativeDocumentMoniker": "CryptoSphere.Wallet.Application\\Common\\Helpers\\ResponseModel.cs",
@@ -139,29 +417,23 @@
               "RelativeToolTip": "CryptoSphere.Wallet.Application\\Common\\Helpers\\ResponseModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T13:36:33.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T13:36:33.767Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\UserService\\UserService.cs",
-              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Infrastructure\\UserService\\UserService.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\UserService\\UserService.cs",
-              "RelativeToolTip": "CryptoSphere.Wallet.Infrastructure\\UserService\\UserService.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAAAJQAAAANAAAA",
+              "DocumentIndex": 22,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Api\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Api\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Api\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Api\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAgwDYAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T13:34:50.855Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "WhenOpened": "2024-09-24T15:16:42.388Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 21,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\Common\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "CryptoSphere.Wallet.Application\\Common\\Interfaces\\IUserService.cs",
@@ -169,12 +441,11 @@
               "RelativeToolTip": "CryptoSphere.Wallet.Application\\Common\\Interfaces\\IUserService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T13:35:51.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T13:35:51.632Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 26,
               "Title": "applicationhost.config",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\.vs\\CryptoSphere.Wallet\\config\\applicationhost.config",
               "RelativeDocumentMoniker": ".vs\\CryptoSphere.Wallet\\config\\applicationhost.config",
@@ -182,7 +453,40 @@
               "RelativeToolTip": ".vs\\CryptoSphere.Wallet\\config\\applicationhost.config",
               "ViewState": "AQIAABUAAAAAAAAAAAAAAC4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-09-22T14:26:14.142Z",
+              "WhenOpened": "2024-09-22T14:26:14.142Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "f0e1982a-8e24-471e-ab98-3306117e7740",
+        "Display": 1,
+        "X": 263,
+        "Y": 0,
+        "Width": 1278,
+        "Height": 766,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\Transaction.cs",
+              "RelativeDocumentMoniker": "CryptoSphere.Wallet.Entities\\Transaction.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\Transaction.cs",
+              "RelativeToolTip": "CryptoSphere.Wallet.Entities\\Transaction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:29:32.124Z",
               "EditorCaption": ""
             }
           ]
