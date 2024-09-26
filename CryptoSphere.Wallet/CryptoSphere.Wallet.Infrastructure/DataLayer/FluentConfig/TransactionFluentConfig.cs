@@ -33,6 +33,8 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
                 .IsRequired()
                 .HasMaxLength(50);
 
+            builder.Property(x => x.CoinSymbol).IsRequired();
+
             builder.Property(x => x.TransactionStatus)
                 .HasMaxLength(20)
                 .IsRequired();
@@ -51,10 +53,25 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
                 TransactionDate = DateTime.Now,
                 TransactionType = Entities.Enums.TransactionType.Deposit,
                 TransactionStatus = Entities.Enums.TransactionStatus.Completed,
+                CoinSymbol = Entities.Enums.CryptoCoinSymbol.BTC,
             
             };
 
             builder.HasData(transaction);
+
+            Transaction transaction1 = new Transaction()
+            {
+                TransactionId = Guid.Parse("621cfe6b-522b-4c4e-8a70-3b4862397fad"),
+                WalletId = Guid.Parse("0AF009C4-0577-4AA0-AAAA-CDC49D9B4A1C"),
+                CryptoId = Guid.Parse("630EE9D4-3EE7-4E55-A3F4-54F64BEF6ED3"),
+                Amount = 60.50m,
+                TransactionDate = DateTime.Now,
+                TransactionType = Entities.Enums.TransactionType.Withdraw,
+                TransactionStatus = Entities.Enums.TransactionStatus.Pending, 
+                CoinSymbol = Entities.Enums.CryptoCoinSymbol.XRP,
+
+            };
+            builder.HasData(transaction1);
         }
     }
 }

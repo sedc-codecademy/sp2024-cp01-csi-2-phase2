@@ -97,10 +97,8 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CoinSymbol")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
+                    b.Property<int>("CoinSymbol")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Quantity")
                         .HasPrecision(5, 2)
@@ -128,9 +126,17 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         new
                         {
                             CoinId = new Guid("aa81f025-f94e-4f15-b4b8-817338c86962"),
-                            CoinSymbol = "TST",
+                            CoinSymbol = 1,
                             Quantity = 1m,
                             ValueInUSD = 20.05m,
+                            WalletId = new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c")
+                        },
+                        new
+                        {
+                            CoinId = new Guid("630ee9d4-3ee7-4e55-a3f4-54f64bef6ed3"),
+                            CoinSymbol = 3,
+                            Quantity = 12m,
+                            ValueInUSD = 84.05m,
                             WalletId = new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c")
                         });
                 });
@@ -160,9 +166,9 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            ExchangeRateId = new Guid("7bf16807-a34b-4be8-a878-786a6ef2f007"),
+                            ExchangeRateId = new Guid("25daf56e-47c8-4c7a-a789-b26f4d496054"),
                             CryptoId = new Guid("aa81f025-f94e-4f15-b4b8-817338c86962"),
-                            LastUpdated = new DateTime(2024, 9, 25, 11, 11, 56, 426, DateTimeKind.Utc).AddTicks(1805),
+                            LastUpdated = new DateTime(2024, 9, 26, 14, 45, 15, 881, DateTimeKind.Utc).AddTicks(3964),
                             RateToUSD = 11002.25m
                         });
                 });
@@ -177,13 +183,16 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         .HasPrecision(18, 4)
                         .HasColumnType("decimal(18,4)");
 
+                    b.Property<int>("CoinSymbol")
+                        .HasColumnType("int");
+
                     b.Property<Guid>("CryptoId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("TransactionDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 11, 56, 427, DateTimeKind.Local).AddTicks(3951));
+                        .HasDefaultValue(new DateTime(2024, 9, 26, 16, 45, 15, 883, DateTimeKind.Local).AddTicks(3570));
 
                     b.Property<int>("TransactionStatus")
                         .HasMaxLength(20)
@@ -211,10 +220,22 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         {
                             TransactionId = new Guid("8418ee6b-90a9-4b0d-9da3-265dea4c590e"),
                             Amount = 23.50m,
+                            CoinSymbol = 0,
                             CryptoId = new Guid("aa81f025-f94e-4f15-b4b8-817338c86962"),
-                            TransactionDate = new DateTime(2024, 9, 25, 13, 11, 56, 427, DateTimeKind.Local).AddTicks(4996),
+                            TransactionDate = new DateTime(2024, 9, 26, 16, 45, 15, 883, DateTimeKind.Local).AddTicks(5053),
                             TransactionStatus = 1,
                             TransactionType = 0,
+                            WalletId = new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c")
+                        },
+                        new
+                        {
+                            TransactionId = new Guid("621cfe6b-522b-4c4e-8a70-3b4862397fad"),
+                            Amount = 60.50m,
+                            CoinSymbol = 3,
+                            CryptoId = new Guid("630ee9d4-3ee7-4e55-a3f4-54f64bef6ed3"),
+                            TransactionDate = new DateTime(2024, 9, 26, 16, 45, 15, 883, DateTimeKind.Local).AddTicks(5111),
+                            TransactionStatus = 0,
+                            TransactionType = 1,
                             WalletId = new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c")
                         });
                 });
@@ -234,7 +255,7 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 9, 25, 11, 11, 56, 427, DateTimeKind.Utc).AddTicks(9827));
+                        .HasDefaultValue(new DateTime(2024, 9, 26, 14, 45, 15, 884, DateTimeKind.Utc).AddTicks(1057));
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -245,6 +266,9 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.Property<string>("WalletAddress")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("WalletStatus")
+                        .HasColumnType("int");
+
                     b.HasKey("WalletId");
 
                     b.ToTable("Wallets");
@@ -254,10 +278,11 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         {
                             WalletId = new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c"),
                             BalanceUSD = 100000m,
-                            CreatedAt = new DateTime(2024, 9, 25, 11, 11, 56, 428, DateTimeKind.Utc).AddTicks(184),
-                            UpdatedAt = new DateTime(2024, 9, 25, 13, 11, 56, 428, DateTimeKind.Utc).AddTicks(185),
-                            UserId = new Guid("276fe82f-0a91-4360-8b34-68d17bd1b65b"),
-                            WalletAddress = "---TestAddress---"
+                            CreatedAt = new DateTime(2024, 9, 26, 14, 45, 15, 884, DateTimeKind.Utc).AddTicks(1488),
+                            UpdatedAt = new DateTime(2024, 9, 26, 16, 45, 15, 884, DateTimeKind.Utc).AddTicks(1489),
+                            UserId = new Guid("7b6e1283-4372-4d77-be5e-7f61aae6632e"),
+                            WalletAddress = "---TestAddress---",
+                            WalletStatus = 0
                         });
                 });
 

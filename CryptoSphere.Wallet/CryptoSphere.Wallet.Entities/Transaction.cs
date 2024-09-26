@@ -12,6 +12,7 @@ namespace CryptoSphere.Wallet.Entities
         public Guid TransactionId { get; set; }
         public Guid WalletId { get; set; }
         public Guid CryptoId { get; set; }
+        public CryptoCoinSymbol CoinSymbol { get; set; }  
         public decimal Amount { get; set; }
         public TransactionType TransactionType { get; set; }
         public DateTime TransactionDate {  get; set; }

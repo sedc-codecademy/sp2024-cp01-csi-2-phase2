@@ -21,12 +21,15 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
 
             builder.Property(x => x.CreatedAt).HasDefaultValue(DateTime.UtcNow).IsRequired();
 
+            builder.Property(x => x.WalletStatus).IsRequired();
+
             Wallet.Entities.Wallet wallet = new Entities.Wallet()
             {
                 WalletId = Guid.Parse("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c"),
                 BalanceUSD = 100000m,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow.AddHours(2),
+                WalletStatus = Entities.Enums.WalletStatus.Active,
                 UserId = Guid.NewGuid(),
                 WalletAddress = "---TestAddress---"
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptoSphere.Wallet.Entities.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace CryptoSphere.Wallet.Entities
         public decimal BalanceUSD { get; set; }
         public List<CryptoCoin>? Cryptos {  get; set; }
         public string? WalletAddress {  get; set; }
+        public WalletStatus WalletStatus { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt {  get; set; }
 
