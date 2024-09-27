@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoSphere.Wallet.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd0ab9d0cfae420852c9f42c68e26e647bdd3e0c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1051af660bc8f5450cbb0520ebb88ae6e81e9118")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoSphere.Wallet.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoSphere.Wallet.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
