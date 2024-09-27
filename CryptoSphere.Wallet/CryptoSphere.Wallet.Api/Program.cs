@@ -1,4 +1,5 @@
 using CryptoSphere.Wallet.Application.Common.Interfaces;
+using CryptoSphere.Wallet.Application.Common.Mappers;
 using CryptoSphere.Wallet.Entities;
 using CryptoSphere.Wallet.Infrastructure.DataLayer;
 using CryptoSphere.Wallet.Infrastructure.UserService;
