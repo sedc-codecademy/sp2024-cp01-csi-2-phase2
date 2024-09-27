@@ -5,11 +5,13 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSphere.Wallet.Api", "CryptoSphere.Wallet.Api\CryptoSphere.Wallet.Api.csproj", "{D01E9FF9-A332-4749-B32B-F264AF9DDB19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSphere.Wallet.Application", "CryptoSphere.Wallet.Application\CryptoSphere.Wallet.Application.csproj", "{0841692A-5587-4971-8FE1-4730602F324C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSphere.Wallet.Application", "CryptoSphere.Wallet.Application\CryptoSphere.Wallet.Application.csproj", "{0841692A-5587-4971-8FE1-4730602F324C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSphere.Wallet.Entities", "CryptoSphere.Wallet.Entities\CryptoSphere.Wallet.Entities.csproj", "{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSphere.Wallet.Entities", "CryptoSphere.Wallet.Entities\CryptoSphere.Wallet.Entities.csproj", "{76DE0FB4-E93F-4FB8-A1CA-AD021F774FF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSphere.Wallet.Infrastructure", "CryptoSphere.Wallet.Infrastructure\CryptoSphere.Wallet.Infrastructure.csproj", "{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSphere.Wallet.Infrastructure", "CryptoSphere.Wallet.Infrastructure\CryptoSphere.Wallet.Infrastructure.csproj", "{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSphere.Wallet.UnitTest", "CryptoSphere.Wallet.UnitTest\CryptoSphere.Wallet.UnitTest.csproj", "{77AF9C86-7F72-4A94-A8A2-1AD5BD1C80CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F9D2E12-CA9B-42C0-994C-0C6E266FF23F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77AF9C86-7F72-4A94-A8A2-1AD5BD1C80CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77AF9C86-7F72-4A94-A8A2-1AD5BD1C80CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77AF9C86-7F72-4A94-A8A2-1AD5BD1C80CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77AF9C86-7F72-4A94-A8A2-1AD5BD1C80CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
