@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CryptoSphere.Wallet.Application.Common.Interfaces
 {
-    internal interface IGenericInterface<T>
+    public interface IGenericInterface<T>
     {
         Task Delete(Guid id);
         Task<T> Get(Guid id);
