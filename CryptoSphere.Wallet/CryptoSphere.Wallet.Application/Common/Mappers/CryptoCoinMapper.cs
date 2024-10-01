@@ -12,11 +12,10 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
                 CoinSymbol = coin.CoinSymbol,
                 Quantity = coin.Quantity,
                 ValueInUSD = coin.ValueInUSD,
-                WalletId = coin.WalletId,
                 CoinId = coin.CoinId,
+                WalletId = coin.WalletId,
                 Wallet = new Entities.Wallet()
                 {
-                    WalletId = coin.WalletId,
                     Cryptos = coin.Wallet.Cryptos,
                     CreatedAt = coin.Wallet.CreatedAt,
                     UpdatedAt = coin.Wallet.UpdatedAt,

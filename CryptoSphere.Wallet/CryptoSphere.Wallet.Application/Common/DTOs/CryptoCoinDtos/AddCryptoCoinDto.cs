@@ -8,6 +8,6 @@ namespace CryptoSphere.Wallet.Application.Common.DTOs.CryptoCoinDtos
 {
     public class AddCryptoCoinDto : CryptoCoinBaseDto
     {
-        public Guid WalletId { get; set; }
+        public int WalletId { get; set; }
     }
 }

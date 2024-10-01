@@ -13,7 +13,8 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
                 Amount = transaction.Amount,
                 TransactionType = transaction.TransactionType,
                 TransactionDate = transaction.TransactionDate,
-                Status = transaction.TransactionStatus
+                Status = transaction.TransactionStatus,
+                WalletId = transaction.WalletId
             };
         }
     }

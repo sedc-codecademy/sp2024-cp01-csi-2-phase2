@@ -17,7 +17,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
         {
             _walletDb = walletDb;
         }
-        public Task Add(TransactionDto transaction)
+        public Task Add(BaseTransactionDto transaction)
         {
             throw new NotImplementedException();
         }
@@ -27,17 +27,17 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
             throw new NotImplementedException();
         }
 
-        public Task<TransactionDto> Get(Guid id)
+        public Task<BaseTransactionDto> Get(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<TransactionDto>> GetAll()
+        public Task<List<BaseTransactionDto>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Task Update(TransactionDto transaction)
+        public Task Update(BaseTransactionDto transaction)
         {
             throw new NotImplementedException();
         }

@@ -11,8 +11,8 @@ namespace CryptoSphere.Wallet.Application.Common.DTOs.WalletDtos
 {
     public class WalletDto : BaseWalletDto
     {
-        public Guid WalletId { get; set; }
-        public Guid UserId {  get; set; }
+        public int WalletId { get; set; }
+        public string? UserId {  get; set; }
         public DateTime CreatedAt { get; set; }
 
         public DateTime UpdatedAt { get; set;}

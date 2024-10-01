@@ -15,7 +15,6 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer
         public DbSet<Entities.Wallet> Wallets => Set<Wallet.Entities.Wallet>();
         public DbSet<CryptoCoin> Cryptos => Set<CryptoCoin>();
         public DbSet<Transaction> Transactions => Set<Transaction>();
-        public DbSet<ExchangeRate> ExchangeRates => Set<ExchangeRate>();
 
         public WalletDbContext(DbContextOptions optionsBuilder) : base(optionsBuilder)
         {

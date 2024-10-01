@@ -14,7 +14,6 @@ namespace CryptoSphere.Wallet.Application.Common.Interfaces
         public DbSet<CryptoCoin> Cryptos { get; }
         public DbSet<Transaction> Transactions { get; }
 
-        public DbSet<ExchangeRate> ExchangeRates { get; }
         public Task<int> SaveChangesAsync();
     }
 }

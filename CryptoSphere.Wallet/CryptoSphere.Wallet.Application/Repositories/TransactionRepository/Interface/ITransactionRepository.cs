@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Interface
 {
-    public interface ITransactionRepository : IGenericInterface<TransactionDto>
+    public interface ITransactionRepository : IGenericInterface<BaseTransactionDto>
     {
-        Task Add(TransactionDto transaction);
-        Task Update (TransactionDto transaction);
+        Task Add(BaseTransactionDto transaction);
+        Task Update (BaseTransactionDto transaction);
     }
 }

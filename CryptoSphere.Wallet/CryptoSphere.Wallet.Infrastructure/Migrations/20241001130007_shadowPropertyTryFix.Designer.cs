@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CryptoSphere.Wallet.Infrastructure.Migrations
 {
     [DbContext(typeof(WalletDbContext))]
-    [Migration("20240925111157_AddNewTableExchangeRate")]
-    partial class AddNewTableExchangeRate
+    [Migration("20241001130007_shadowPropertyTryFix")]
+    partial class shadowPropertyTryFix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -96,14 +96,14 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
 
             modelBuilder.Entity("CryptoSphere.Wallet.Entities.CryptoCoin", b =>
                 {
-                    b.Property<Guid>("CoinId")
+                    b.Property<int>("CoinId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<string>("CoinSymbol")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CoinId"));
+
+                    b.Property<int>("CoinSymbol")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Quantity")
                         .HasPrecision(5, 2)
@@ -113,11 +113,11 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         .HasPrecision(5, 2)
                         .HasColumnType("decimal(5,2)");
 
-                    b.Property<Guid>("WalletId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("WalletId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("WalletId1")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("WalletId1")
+                        .HasColumnType("int");
 
                     b.HasKey("CoinId");
 
@@ -126,67 +126,30 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.HasIndex("WalletId1");
 
                     b.ToTable("Cryptos");
-
-                    b.HasData(
-                        new
-                        {
-                            CoinId = new Guid("aa81f025-f94e-4f15-b4b8-817338c86962"),
-                            CoinSymbol = "TST",
-                            Quantity = 1m,
-                            ValueInUSD = 20.05m,
-                            WalletId = new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c")
-                        });
-                });
-
-            modelBuilder.Entity("CryptoSphere.Wallet.Entities.ExchangeRate", b =>
-                {
-                    b.Property<Guid>("ExchangeRateId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CryptoId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("LastUpdated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("RateToUSD")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
-
-                    b.HasKey("ExchangeRateId");
-
-                    b.HasIndex("CryptoId");
-
-                    b.ToTable("ExchangeRates");
-
-                    b.HasData(
-                        new
-                        {
-                            ExchangeRateId = new Guid("7bf16807-a34b-4be8-a878-786a6ef2f007"),
-                            CryptoId = new Guid("aa81f025-f94e-4f15-b4b8-817338c86962"),
-                            LastUpdated = new DateTime(2024, 9, 25, 11, 11, 56, 426, DateTimeKind.Utc).AddTicks(1805),
-                            RateToUSD = 11002.25m
-                        });
                 });
 
             modelBuilder.Entity("CryptoSphere.Wallet.Entities.Transaction", b =>
                 {
-                    b.Property<Guid>("TransactionId")
+                    b.Property<int>("TransactionId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionId"));
 
                     b.Property<decimal>("Amount")
                         .HasPrecision(18, 4)
                         .HasColumnType("decimal(18,4)");
 
-                    b.Property<Guid>("CryptoId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("CoinSymbol")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CryptoId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("TransactionDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 11, 56, 427, DateTimeKind.Local).AddTicks(3951));
+                        .HasDefaultValue(new DateTime(2024, 10, 1, 15, 0, 6, 597, DateTimeKind.Local).AddTicks(7307));
 
                     b.Property<int>("TransactionStatus")
                         .HasMaxLength(20)
@@ -196,8 +159,8 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("int");
 
-                    b.Property<Guid>("WalletId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("WalletId")
+                        .HasColumnType("int");
 
                     b.HasKey("TransactionId");
 
@@ -208,25 +171,15 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.HasIndex("WalletId");
 
                     b.ToTable("Transactions");
-
-                    b.HasData(
-                        new
-                        {
-                            TransactionId = new Guid("8418ee6b-90a9-4b0d-9da3-265dea4c590e"),
-                            Amount = 23.50m,
-                            CryptoId = new Guid("aa81f025-f94e-4f15-b4b8-817338c86962"),
-                            TransactionDate = new DateTime(2024, 9, 25, 13, 11, 56, 427, DateTimeKind.Local).AddTicks(4996),
-                            TransactionStatus = 1,
-                            TransactionType = 0,
-                            WalletId = new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c")
-                        });
                 });
 
             modelBuilder.Entity("CryptoSphere.Wallet.Entities.Wallet", b =>
                 {
-                    b.Property<Guid>("WalletId")
+                    b.Property<int>("WalletId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WalletId"));
 
                     b.Property<decimal>("BalanceUSD")
                         .ValueGeneratedOnAdd()
@@ -237,31 +190,27 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 9, 25, 11, 11, 56, 427, DateTimeKind.Utc).AddTicks(9827));
+                        .HasDefaultValue(new DateTime(2024, 10, 1, 13, 0, 6, 598, DateTimeKind.Utc).AddTicks(5152));
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("WalletAddress")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("WalletStatus")
+                        .HasColumnType("int");
+
                     b.HasKey("WalletId");
 
-                    b.ToTable("Wallets");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
-                    b.HasData(
-                        new
-                        {
-                            WalletId = new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c"),
-                            BalanceUSD = 100000m,
-                            CreatedAt = new DateTime(2024, 9, 25, 11, 11, 56, 428, DateTimeKind.Utc).AddTicks(184),
-                            UpdatedAt = new DateTime(2024, 9, 25, 13, 11, 56, 428, DateTimeKind.Utc).AddTicks(185),
-                            UserId = new Guid("276fe82f-0a91-4360-8b34-68d17bd1b65b"),
-                            WalletAddress = "---TestAddress---"
-                        });
+                    b.ToTable("Wallets");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -412,17 +361,6 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.Navigation("Wallet");
                 });
 
-            modelBuilder.Entity("CryptoSphere.Wallet.Entities.ExchangeRate", b =>
-                {
-                    b.HasOne("CryptoSphere.Wallet.Entities.CryptoCoin", "Crypto")
-                        .WithMany()
-                        .HasForeignKey("CryptoId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Crypto");
-                });
-
             modelBuilder.Entity("CryptoSphere.Wallet.Entities.Transaction", b =>
                 {
                     b.HasOne("CryptoSphere.Wallet.Entities.CryptoCoin", "Coin")
@@ -440,6 +378,17 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.Navigation("Coin");
 
                     b.Navigation("Wallet");
+                });
+
+            modelBuilder.Entity("CryptoSphere.Wallet.Entities.Wallet", b =>
+                {
+                    b.HasOne("CryptoSphere.Wallet.Entities.ApplicationUser", "User")
+                        .WithOne("Wallet")
+                        .HasForeignKey("CryptoSphere.Wallet.Entities.Wallet", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -491,6 +440,11 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CryptoSphere.Wallet.Entities.ApplicationUser", b =>
+                {
+                    b.Navigation("Wallet");
                 });
 
             modelBuilder.Entity("CryptoSphere.Wallet.Entities.CryptoCoin", b =>

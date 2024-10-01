@@ -8,7 +8,7 @@ namespace CryptoSphere.Wallet.Application.Common.DTOs.CryptoCoinDtos
 {
     public class UpdateCryptoCoinDto
     { 
-        public Guid CoinId { get; set; }
+        public int CoinId { get; set; }
         public decimal Quantity { get; set; }
        
     }

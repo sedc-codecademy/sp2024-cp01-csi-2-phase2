@@ -188,6 +188,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EfCore.SchemaCompare": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"

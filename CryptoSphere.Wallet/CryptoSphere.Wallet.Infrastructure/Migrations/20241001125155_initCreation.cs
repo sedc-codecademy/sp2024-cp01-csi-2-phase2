@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CryptoSphere.Wallet.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitTableCreation : Migration
+    public partial class initCreation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,22 +49,6 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Wallets",
-                columns: table => new
-                {
-                    WalletId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    BalanceUSD = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false, defaultValue: 100000m),
-                    WalletAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 9, 22, 14, 15, 24, 416, DateTimeKind.Utc).AddTicks(6987)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Wallets", x => x.WalletId);
                 });
 
             migrationBuilder.CreateTable(
@@ -174,14 +158,40 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Wallets",
+                columns: table => new
+                {
+                    WalletId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    BalanceUSD = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false, defaultValue: 100000m),
+                    WalletAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    WalletStatus = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 10, 1, 12, 51, 54, 446, DateTimeKind.Utc).AddTicks(8879)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Wallets", x => x.WalletId);
+                    table.ForeignKey(
+                        name: "FK_Wallets_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Cryptos",
                 columns: table => new
                 {
-                    CoinId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CoinSymbol = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
+                    CoinId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CoinSymbol = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<decimal>(type: "decimal(5,2)", precision: 5, scale: 2, nullable: false),
                     ValueInUSD = table.Column<decimal>(type: "decimal(5,2)", precision: 5, scale: 2, nullable: false),
-                    WalletId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    WalletId = table.Column<int>(type: "int", nullable: false),
+                    WalletId1 = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -191,18 +201,44 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         column: x => x.WalletId,
                         principalTable: "Wallets",
                         principalColumn: "WalletId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Cryptos_Wallets_WalletId1",
+                        column: x => x.WalletId1,
+                        principalTable: "Wallets",
+                        principalColumn: "WalletId");
                 });
 
-            migrationBuilder.InsertData(
-                table: "Wallets",
-                columns: new[] { "WalletId", "BalanceUSD", "CreatedAt", "UpdatedAt", "UserId", "WalletAddress" },
-                values: new object[] { new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c"), 100000m, new DateTime(2024, 9, 22, 14, 15, 24, 416, DateTimeKind.Utc).AddTicks(7257), new DateTime(2024, 9, 22, 16, 15, 24, 416, DateTimeKind.Utc).AddTicks(7257), new Guid("b3e8b955-b45f-411b-a29a-b7cfa849eae7"), "---TestAddress---" });
-
-            migrationBuilder.InsertData(
-                table: "Cryptos",
-                columns: new[] { "CoinId", "CoinSymbol", "Quantity", "ValueInUSD", "WalletId" },
-                values: new object[] { new Guid("aa81f025-f94e-4f15-b4b8-817338c86962"), "TST", 1m, 20.05m, new Guid("0af009c4-0577-4aa0-aaaa-cdc49d9b4a1c") });
+            migrationBuilder.CreateTable(
+                name: "Transactions",
+                columns: table => new
+                {
+                    TransactionId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    WalletId = table.Column<int>(type: "int", nullable: false),
+                    CryptoId = table.Column<int>(type: "int", nullable: false),
+                    CoinSymbol = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<decimal>(type: "decimal(18,4)", precision: 18, scale: 4, nullable: false),
+                    TransactionType = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 10, 1, 14, 51, 54, 445, DateTimeKind.Local).AddTicks(8812)),
+                    TransactionStatus = table.Column<int>(type: "int", maxLength: 20, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Transactions", x => x.TransactionId);
+                    table.ForeignKey(
+                        name: "FK_Transactions_Cryptos_CryptoId",
+                        column: x => x.CryptoId,
+                        principalTable: "Cryptos",
+                        principalColumn: "CoinId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Transactions_Wallets_WalletId",
+                        column: x => x.WalletId,
+                        principalTable: "Wallets",
+                        principalColumn: "WalletId",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -247,6 +283,32 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                 name: "IX_Cryptos_WalletId",
                 table: "Cryptos",
                 column: "WalletId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Cryptos_WalletId1",
+                table: "Cryptos",
+                column: "WalletId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Transactions_CryptoId",
+                table: "Transactions",
+                column: "CryptoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Transactions_TransactionDate",
+                table: "Transactions",
+                column: "TransactionDate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Transactions_WalletId",
+                table: "Transactions",
+                column: "WalletId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Wallets_UserId",
+                table: "Wallets",
+                column: "UserId",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -268,16 +330,19 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Cryptos");
+                name: "Transactions");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Cryptos");
 
             migrationBuilder.DropTable(
                 name: "Wallets");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
         }
     }
 }

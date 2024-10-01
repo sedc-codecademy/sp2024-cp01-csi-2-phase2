@@ -9,8 +9,8 @@ namespace CryptoSphere.Wallet.Application.Common.DTOs.CryptoCoinDtos
 {
     public class CryptoCoinDto : CryptoCoinBaseDto
     {
-       public Guid CoinId { get; set; }
-        public Guid WalletId {  get; set; }
+       public int CoinId { get; set; }
+        public int WalletId {  get; set; }
 
         public Wallet.Entities.Wallet Wallet {  get; set; }
         public Transaction Transaction { get; set; }
