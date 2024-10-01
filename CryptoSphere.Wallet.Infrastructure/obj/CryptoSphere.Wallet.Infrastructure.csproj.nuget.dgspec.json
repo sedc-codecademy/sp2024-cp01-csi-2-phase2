@@ -1,0 +1,243 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj",
+        "projectName": "CryptoSphere.Wallet.Application",
+        "projectPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj": {
+                "projectPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj",
+        "projectName": "CryptoSphere.Wallet.Entities",
+        "projectPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj",
+        "projectName": "CryptoSphere.Wallet.Infrastructure",
+        "projectPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\CryptoSphere.Wallet.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj": {
+                "projectPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Application\\CryptoSphere.Wallet.Application.csproj"
+              },
+              "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj": {
+                "projectPath": "C:\\Users\\ACER\\Desktop\\CryptoSphere Wallet phase2(git)\\CryptoSphere.Wallet\\CryptoSphere.Wallet.Entities\\CryptoSphere.Wallet.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "EfCore.SchemaCompare": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
