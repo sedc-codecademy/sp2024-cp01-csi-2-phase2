@@ -1,0 +1,16 @@
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\bin\Debug\net8.0\CryptoSphere.Wallet.Application.deps.json
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\bin\Debug\net8.0\CryptoSphere.Wallet.Application.dll
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\bin\Debug\net8.0\CryptoSphere.Wallet.Application.pdb
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\bin\Debug\net8.0\CryptoSphere.Wallet.Entities.dll
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\bin\Debug\net8.0\CryptoSphere.Wallet.Entities.pdb
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\CryptoSphere.Wallet.Application.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\CryptoSphere.Wallet.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\CryptoSphere.Wallet.Application.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\CryptoSphere.Wallet.Application.AssemblyInfo.cs
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\CryptoSphere.Wallet.Application.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\CryptoSphere.Wallet.Application.sourcelink.json
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\CryptoSp.0BB6B312.Up2Date
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\CryptoSphere.Wallet.Application.dll
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\refint\CryptoSphere.Wallet.Application.dll
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\CryptoSphere.Wallet.Application.pdb
+C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.Application\obj\Debug\net8.0\ref\CryptoSphere.Wallet.Application.dll
