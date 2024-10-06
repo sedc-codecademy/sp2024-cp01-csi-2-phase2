@@ -1,7 +1,0 @@
-C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.UnitTest\bin\Debug\net8.0\CoverletSourceRootsMapping_CryptoSphere.Wallet.UnitTest
-C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.UnitTest\obj\Debug\net8.0\CryptoSphere.Wallet.UnitTest.csproj.AssemblyReference.cache
-C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.UnitTest\obj\Debug\net8.0\CryptoSphere.Wallet.UnitTest.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.UnitTest\obj\Debug\net8.0\CryptoSphere.Wallet.UnitTest.AssemblyInfoInputs.cache
-C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.UnitTest\obj\Debug\net8.0\CryptoSphere.Wallet.UnitTest.AssemblyInfo.cs
-C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.UnitTest\obj\Debug\net8.0\CryptoSphere.Wallet.UnitTest.csproj.CoreCompileInputs.cache
-C:\Users\ACER\Desktop\CryptoSphere Wallet phase2(git)\CryptoSphere.Wallet\CryptoSphere.Wallet.UnitTest\obj\Debug\net8.0\CryptoSphere.Wallet.UnitTest.sourcelink.json
