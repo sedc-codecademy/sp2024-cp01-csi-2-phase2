@@ -5,6 +5,7 @@ using CryptoSphere.Wallet.Application.Repositories.WalletRepository.Interface;
 using CryptoSphere.Wallet.Application.Common.Mappers;
 using Microsoft.EntityFrameworkCore;
 using CryptoSphere.Wallet.Entities;
+using CryptoSphere.Wallet.Application.Common.DTOs.CryptoCoinDtos;
 
 namespace CryptoSphere.Wallet.Application.Repositories.WalletRepository.Service
 {
@@ -108,7 +109,10 @@ namespace CryptoSphere.Wallet.Application.Repositories.WalletRepository.Service
                 walletDto.UserId = userId;
                 walletDto.BalanceUSD = updateWalletDto.BalanceUSD;
                 walletDto.Status = updateWalletDto.Status;
-                walletDto.Cryptos = updateWalletDto.Cryptos;
+                walletDto.Cryptos = updateWalletDto.Cryptos.Select(x => new CryptoCoinDto
+                {
+                    Quantity = x.Quantity,
+                }).ToList();
                 walletDto.UpdatedAt = DateTime.UtcNow;
                 walletDto.WalletAddress = Guid.NewGuid().ToString();
                 var walletEntity = walletDto.MapToWalletEntity();

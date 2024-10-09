@@ -9,7 +9,7 @@ namespace CryptoSphere.Wallet.Application.Common.DTOs.WalletDtos
         public int WalletId { get; set; }
         public string UserId { get; set; }
         public decimal BalanceUSD { get; set; }
-        public List<CryptoCoin> Cryptos { get; set; }
+        public List<CryptoCoinDto> Cryptos { get; set; }
         public WalletStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }
 

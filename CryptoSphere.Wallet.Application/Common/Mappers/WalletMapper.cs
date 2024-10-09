@@ -1,4 +1,5 @@
-﻿using CryptoSphere.Wallet.Application.Common.DTOs.WalletDtos;
+﻿using CryptoSphere.Wallet.Application.Common.DTOs.CryptoCoinDtos;
+using CryptoSphere.Wallet.Application.Common.DTOs.WalletDtos;
 using CryptoSphere.Wallet.Entities;
 using CryptoSphere.Wallet.Entities.Enums;
 
@@ -10,7 +11,14 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
         {
             return new WalletDto
             {
-                Cryptos = wallet.Cryptos,
+                Cryptos = (List<DTOs.CryptoCoinDtos.CryptoCoinDto>)wallet.Cryptos.Select(x => new DTOs.CryptoCoinDtos.CryptoCoinDto
+                {
+                    CoinSymbol = x.CoinSymbol,
+                    Quantity = x.Quantity,
+                    ValueInUSD = x.ValueInUSD,
+                    CoinId = x.CoinId,
+                    WalletId = x.WalletId,
+                }),
                 CreatedAt = wallet.CreatedAt,
                 Status = wallet.WalletStatus,
                 UpdatedAt = wallet.UpdatedAt,
@@ -27,7 +35,13 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
             {
                 BalanceUSD = wallet.BalanceUSD,
                 WalletStatus = wallet.Status,
-                Cryptos = wallet.Cryptos,
+                Cryptos =wallet.Cryptos.Select(x => new CryptoCoin
+                {
+                    CoinSymbol = x.CoinSymbol,
+                    Quantity = x.Quantity,
+                    ValueInUSD = x.ValueInUSD,
+                    WalletId = (int)x.WalletId, 
+                } ).ToList()
                 
             };
         }
@@ -42,8 +56,14 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
                 BalanceUSD = wallet.BalanceUSD,
                 CreatedAt = wallet.CreatedAt,
                 UpdatedAt = wallet.UpdatedAt,
-                Cryptos = wallet.Cryptos,
-                WalletStatus = wallet.Status
+                Cryptos = wallet.Cryptos.Select(x => new Entities.CryptoCoin
+                {
+                    CoinSymbol = x.CoinSymbol,
+                    Quantity = x.Quantity,
+                    ValueInUSD = x.ValueInUSD,
+                    WalletId = wallet.WalletId
+                }).ToList(),
+            WalletStatus = wallet.Status
             };
         }
     }

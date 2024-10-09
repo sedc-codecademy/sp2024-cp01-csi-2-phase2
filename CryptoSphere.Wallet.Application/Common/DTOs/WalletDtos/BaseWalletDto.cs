@@ -1,5 +1,6 @@
 
-﻿using CryptoSphere.Wallet.Entities;
+using CryptoSphere.Wallet.Application.Common.DTOs.CryptoCoinDtos;
+using CryptoSphere.Wallet.Entities;
 using CryptoSphere.Wallet.Entities.Enums;
 
 namespace CryptoSphere.Wallet.Application.Common.DTOs.WalletDtos
@@ -7,7 +8,7 @@ namespace CryptoSphere.Wallet.Application.Common.DTOs.WalletDtos
     public class BaseWalletDto
     {
         public decimal BalanceUSD { get; set; }
-        public List<CryptoCoin> Cryptos { get; set; }
+        public List<AddCryptoCoinDto>? Cryptos { get; set; }
         public WalletStatus Status { get; set; }
     }
 }
