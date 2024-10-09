@@ -11,14 +11,16 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
         {
             return new WalletDto
             {
-                Cryptos = (List<DTOs.CryptoCoinDtos.CryptoCoinDto>)wallet.Cryptos.Select(x => new DTOs.CryptoCoinDtos.CryptoCoinDto
+                Cryptos = wallet.Cryptos != null
+                ? wallet.Cryptos.Select(x => new DTOs.CryptoCoinDtos.CryptoCoinDto
                 {
                     CoinSymbol = x.CoinSymbol,
                     Quantity = x.Quantity,
                     ValueInUSD = x.ValueInUSD,
                     CoinId = x.CoinId,
                     WalletId = x.WalletId,
-                }),
+                }).ToList()
+                : new List<DTOs.CryptoCoinDtos.CryptoCoinDto>(),
                 CreatedAt = wallet.CreatedAt,
                 Status = wallet.WalletStatus,
                 UpdatedAt = wallet.UpdatedAt,
@@ -40,28 +42,19 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
                     CoinSymbol = x.CoinSymbol,
                     Quantity = x.Quantity,
                     ValueInUSD = x.ValueInUSD,
-                    WalletId = (int)x.WalletId, 
                 } ).ToList()
                 
             };
         }
 
-        public static Entities.Wallet MapToWalletEntity (this WalletDto wallet)
+        public static Entities.Wallet MapToWalletEntity (this UpdateWalletDto wallet)
         {
             return new Entities.Wallet
             {
-                WalletId = wallet.WalletId,
-                UserId = wallet.UserId,
-                WalletAddress = wallet.WalletAddress,
                 BalanceUSD = wallet.BalanceUSD,
-                CreatedAt = wallet.CreatedAt,
-                UpdatedAt = wallet.UpdatedAt,
                 Cryptos = wallet.Cryptos.Select(x => new Entities.CryptoCoin
                 {
-                    CoinSymbol = x.CoinSymbol,
                     Quantity = x.Quantity,
-                    ValueInUSD = x.ValueInUSD,
-                    WalletId = wallet.WalletId
                 }).ToList(),
             WalletStatus = wallet.Status
             };

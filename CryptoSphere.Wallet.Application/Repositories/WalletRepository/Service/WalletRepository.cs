@@ -24,29 +24,35 @@ namespace CryptoSphere.Wallet.Application.Repositories.WalletRepository.Service
             try
             {
                 var userCheck = await _walletDb.Wallets.FirstOrDefaultAsync(w => w.UserId == userId);
-                if (userCheck.UserId == null)
+                if (userCheck != null)
                 {
+                    return new ResponseModel<WalletDto>() { IsValid = false,ValidationMessage= "You have already created a wallet!" };
+                }
+
                     var wallet = addWalletDto.ToAddWalletDto();
                     wallet.UserId = userId;
-                    foreach(var item in wallet.Cryptos)
+                if (wallet.Cryptos != null)
+                {
+                    foreach (var item in wallet.Cryptos)
                     {
                         item.UserId = userId;
+                        item.WalletId = wallet.WalletId; 
                     }
-                    wallet.CreatedAt = DateTime.UtcNow;
+                }
+                else
+                {
+                    wallet.Cryptos = new List<CryptoCoin>();
+                }
+                wallet.CreatedAt = DateTime.UtcNow;
                     wallet.WalletAddress = Guid.NewGuid().ToString();
                     await _walletDb.Wallets.AddAsync(wallet);
                     await _walletDb.SaveChangesAsync();
                     var walletDto = wallet.ToWalletDto();
                     return new ResponseModel<WalletDto>(walletDto);
-                }
-                else
-                {
-                    return new ResponseModel<WalletDto>() { IsValid = false,ValidationMessage= "You have already created a wallet!" };
-                }
 
             }catch(Exception ex) 
             {
-                throw new Exception($"Something went wrong while adding wallet! {ex.Message}");
+                throw new Exception(ex.Message);
             }
             
         }
@@ -71,7 +77,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.WalletRepository.Service
         {
             try
             {
-                var walletsFromDb = await _walletDb.Wallets.Include(x => x.CryptoCoins).ToListAsync();
+                var walletsFromDb = await _walletDb.Wallets.Include(x => x.Cryptos).ToListAsync();
                 List<WalletDto> wallets = new List<WalletDto>();
                 foreach (var wallet in walletsFromDb)
                 {
@@ -102,28 +108,49 @@ namespace CryptoSphere.Wallet.Application.Repositories.WalletRepository.Service
         {
             try
             {
-                var wallet = await _walletDb.Wallets.FindAsync(id);
-                if (wallet is null) return new ResponseModel<WalletDto>("Wallet not found");
-                if (wallet.UserId != userId) return new ResponseModel<WalletDto>("You can't update this wallet!");
-                var walletDto = wallet.ToWalletDto();
-                walletDto.UserId = userId;
-                walletDto.BalanceUSD = updateWalletDto.BalanceUSD;
-                walletDto.Status = updateWalletDto.Status;
-                walletDto.Cryptos = updateWalletDto.Cryptos.Select(x => new CryptoCoinDto
+                var wallet = await _walletDb.Wallets.Include(w => w.Cryptos).FirstOrDefaultAsync(w => w.WalletId == id);
+
+                if (wallet == null)
+                    return new ResponseModel<WalletDto>("Wallet not found");
+
+                if (wallet.UserId != userId)
+                    return new ResponseModel<WalletDto>("You can't update this wallet!");
+
+                wallet.BalanceUSD = updateWalletDto.BalanceUSD;
+                wallet.WalletId = wallet.WalletId;
+                wallet.WalletStatus = updateWalletDto.Status;
+                wallet.UpdatedAt = DateTime.UtcNow;
+
+                foreach (var cryptoDto in updateWalletDto.Cryptos)
                 {
-                    Quantity = x.Quantity,
-                }).ToList();
-                walletDto.UpdatedAt = DateTime.UtcNow;
-                walletDto.WalletAddress = Guid.NewGuid().ToString();
-                var walletEntity = walletDto.MapToWalletEntity();
-                _walletDb.Wallets.Update(walletEntity);
+                    var existingCrypto = wallet.Cryptos.FirstOrDefault(c => c.CoinId == cryptoDto.CoinId);
+                    if (existingCrypto != null)
+                    { 
+                        existingCrypto.Quantity = cryptoDto.Quantity;
+                        
+                    }
+                    else
+                    {
+                        var newCrypto = new CryptoCoin
+                        {
+                            Quantity = cryptoDto.Quantity,
+                            WalletId = wallet.WalletId
+                        };
+                        wallet.Cryptos.Add(newCrypto);
+                    }
+                }
+
                 await _walletDb.SaveChangesAsync();
-                return new ResponseModel<WalletDto>() { IsValid = true, Result = walletDto };
-            }catch(Exception ex)
+
+                var walletDto = wallet.ToWalletDto();
+                return new ResponseModel<WalletDto> { IsValid = true, Result = walletDto };
+            }
+            catch (Exception ex)
             {
                 throw new Exception($"Something went wrong while updating! {ex.Message}");
             }
-
         }
+
+
     }
 }

@@ -2,7 +2,7 @@
 {
     public class UpdateCryptoCoinDto
     {
-        public int CoinId { get; set; }
+        public int CoinId {  get; set; }
         public decimal Quantity { get; set; }
 
     }

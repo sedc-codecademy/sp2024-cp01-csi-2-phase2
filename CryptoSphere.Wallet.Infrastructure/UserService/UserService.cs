@@ -39,9 +39,9 @@ namespace CryptoSphere.Wallet.Infrastructure.UserService
 
                 var claims = new Claim[]
                 {
-                    new Claim(ClaimTypes.NameIdentifier, loginUser.UserName),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
                     new Claim(ClaimTypes.Country , user.Country),
-                    new Claim(ClaimTypes.NameIdentifier , user.Id)
+                    new Claim(ClaimTypes.Name , user.UserName)
                 };
 
                 var signInKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration.GetValue<string>("SecretKey")));
@@ -69,6 +69,7 @@ namespace CryptoSphere.Wallet.Infrastructure.UserService
             user.PhoneNumber = registerUser.PhoneNumber;
             user.UserName = registerUser.UserName;
             user.Country = registerUser.Country;
+            
 
             var validationModel = await Validate(registerUser, user);
 

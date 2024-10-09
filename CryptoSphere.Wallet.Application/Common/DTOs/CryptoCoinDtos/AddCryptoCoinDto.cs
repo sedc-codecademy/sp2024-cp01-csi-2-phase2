@@ -2,6 +2,6 @@
 {
     public class AddCryptoCoinDto : CryptoCoinBaseDto
     {
-        public int WalletId { get; set; }
+        
     }
 }

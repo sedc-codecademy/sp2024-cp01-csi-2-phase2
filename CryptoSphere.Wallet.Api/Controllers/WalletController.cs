@@ -59,5 +59,36 @@ namespace CryptoSphere.Wallet.Api.Controllers
                 return BadRequest($"Something went wrong while adding a new wallet!{ex.Message}");
             }
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateWallet(int id, [FromBody] UpdateWalletDto updateWalletDto)
+        {
+            try
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (userId == null) return BadRequest("No user identified");
+                var response = await _walletRepository.UpdateWallet(userId,id, updateWalletDto);
+                return Response(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Something went wrong while updating the wallet! {ex.Message}");
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteWallet( int id)
+        {
+            try
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (userId == null) return BadRequest("No user identified");
+                var response = await _walletRepository.DeleteWallet(userId, id);
+                return Response(response);
+            }catch(Exception ex)
+            {
+                return BadRequest($"Something went wrong while deleting the wallet! {ex.Message}");
+            }
+        }
     }
 }

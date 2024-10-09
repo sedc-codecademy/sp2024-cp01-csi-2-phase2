@@ -1,5 +1,11 @@
 using CryptoSphere.Wallet.Application.Common.Interfaces;
 using CryptoSphere.Wallet.Application.Common.Mappers;
+using CryptoSphere.Wallet.Application.Repositories.CryptoCoinRepository.Interface;
+using CryptoSphere.Wallet.Application.Repositories.CryptoCoinRepository.Service;
+using CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Interface;
+using CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Service;
+using CryptoSphere.Wallet.Application.Repositories.WalletRepository.Interface;
+using CryptoSphere.Wallet.Application.Repositories.WalletRepository.Service;
 using CryptoSphere.Wallet.Entities;
 using CryptoSphere.Wallet.Infrastructure.DataLayer;
 using CryptoSphere.Wallet.Infrastructure.UserService;
@@ -22,6 +28,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 
 builder.Services.AddScoped<IWalletDbContext, WalletDbContext>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IWalletRepository, WalletRepository>();
+builder.Services.AddScoped<ICryptoCoinRepository, CryptoCoinRepository>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
