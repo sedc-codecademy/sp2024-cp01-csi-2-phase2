@@ -29,7 +29,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.CryptoCoinRepository.Serv
                 if (cryptoCoin != null) { return new ResponseModel<CryptoCoinDto>("You already have this crypto currency"); }
 
                 var coin = addCryptoCoinDto.ToAddCoinDto();
-                coin.UserId = userId;
+                coin.UserId = wallet.UserId;
                 coin.WalletId = wallet.WalletId;
 
                 await _walletDb.Cryptos.AddAsync(coin);
@@ -110,7 +110,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.CryptoCoinRepository.Serv
                 coin.Quantity = updateCryptoCoinDto.Quantity;
 
                 var response = coin.ToCryptoCoinDto();
-                return new ResponseModel<CryptoCoinDto>(response);
+                return new ResponseModel<CryptoCoinDto>(response) { IsValid = true};
 
             }catch (Exception ex)
             {

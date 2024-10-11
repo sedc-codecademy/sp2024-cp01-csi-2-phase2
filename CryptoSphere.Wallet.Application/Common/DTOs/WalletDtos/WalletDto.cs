@@ -1,6 +1,7 @@
 ﻿using CryptoSphere.Wallet.Application.Common.DTOs.CryptoCoinDtos;
 using CryptoSphere.Wallet.Entities.Enums;
 using CryptoSphere.Wallet.Entities;
+using System.Text.Json.Serialization;
 
 namespace CryptoSphere.Wallet.Application.Common.DTOs.WalletDtos
 {

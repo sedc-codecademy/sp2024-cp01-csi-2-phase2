@@ -17,11 +17,9 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
                 WalletId = coin.WalletId,
                 Wallet = new Entities.Wallet()
                 {
-                    Cryptos = coin.Wallet.Cryptos,
                     CreatedAt = coin.Wallet.CreatedAt,
                     UpdatedAt = coin.Wallet.UpdatedAt,
                     BalanceUSD = coin.Wallet.BalanceUSD,
-                    WalletAddress = coin.Wallet.WalletAddress,
                     WalletStatus = coin.Wallet.WalletStatus,
                     UserId = coin.Wallet.UserId,
                 }

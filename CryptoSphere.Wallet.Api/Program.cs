@@ -32,6 +32,7 @@ builder.Services.AddScoped<IWalletRepository, WalletRepository>();
 builder.Services.AddScoped<ICryptoCoinRepository, CryptoCoinRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
