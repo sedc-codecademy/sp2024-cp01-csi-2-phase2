@@ -1,5 +1,6 @@
 ﻿using CryptoSphere.Wallet.Application.Common.DTOs.CryptoCoinDtos;
 using CryptoSphere.Wallet.Entities;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CryptoSphere.Wallet.Application.Common.Mappers
 {
@@ -24,6 +25,15 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
                     WalletStatus = coin.Wallet.WalletStatus,
                     UserId = coin.Wallet.UserId,
                 }
+            };
+        }
+        public static CryptoCoin ToAddCoinDto(this AddCryptoCoinDto coin) 
+        {
+            return new CryptoCoin
+            {
+                CoinSymbol = coin.CoinSymbol,
+                Quantity = coin.Quantity,
+                ValueInUSD = coin.ValueInUSD
             };
         }
     }

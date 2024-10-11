@@ -52,10 +52,6 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
             return new Entities.Wallet
             {
                 BalanceUSD = wallet.BalanceUSD,
-                Cryptos = wallet.Cryptos.Select(x => new Entities.CryptoCoin
-                {
-                    Quantity = x.Quantity,
-                }).ToList(),
             WalletStatus = wallet.Status
             };
         }

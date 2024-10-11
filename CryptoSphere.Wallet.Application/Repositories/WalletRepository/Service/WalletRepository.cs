@@ -121,25 +121,6 @@ namespace CryptoSphere.Wallet.Application.Repositories.WalletRepository.Service
                 wallet.WalletStatus = updateWalletDto.Status;
                 wallet.UpdatedAt = DateTime.UtcNow;
 
-                foreach (var cryptoDto in updateWalletDto.Cryptos)
-                {
-                    var existingCrypto = wallet.Cryptos.FirstOrDefault(c => c.CoinId == cryptoDto.CoinId);
-                    if (existingCrypto != null)
-                    { 
-                        existingCrypto.Quantity = cryptoDto.Quantity;
-                        
-                    }
-                    else
-                    {
-                        var newCrypto = new CryptoCoin
-                        {
-                            Quantity = cryptoDto.Quantity,
-                            WalletId = wallet.WalletId
-                        };
-                        wallet.Cryptos.Add(newCrypto);
-                    }
-                }
-
                 await _walletDb.SaveChangesAsync();
 
                 var walletDto = wallet.ToWalletDto();
