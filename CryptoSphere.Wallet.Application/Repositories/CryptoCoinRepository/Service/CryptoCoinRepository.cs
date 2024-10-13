@@ -50,11 +50,14 @@ namespace CryptoSphere.Wallet.Application.Repositories.CryptoCoinRepository.Serv
         {
             try
             {
-                var coin = await _walletDb.Cryptos.FindAsync(coinId);
-                if (coin is null) { return new ResponseModel<CryptoCoinDto>("Coin can not be found!"); }
-                if (userId != coin.UserId) { return new ResponseModel<CryptoCoinDto>("You can't do this action!"); }
+                var coin = await _walletDb.Cryptos
+                      .Include(c => c.Wallet)
+                      .FirstOrDefaultAsync(c => c.CoinId == coinId);
 
-                 _walletDb.Cryptos.Remove(coin);
+                if (coin is null) { return new ResponseModel<CryptoCoinDto>("Coin not found!"); }
+                if (coin.Wallet.UserId != userId){ return new ResponseModel<CryptoCoinDto>("You can't delete this coin! It doesn't belong to your wallet."); }
+
+                    _walletDb.Cryptos.Remove(coin);
                 await _walletDb.SaveChangesAsync();
                 return new ResponseModel { IsValid = true };
 
@@ -104,12 +107,16 @@ namespace CryptoSphere.Wallet.Application.Repositories.CryptoCoinRepository.Serv
         {
             try
             {
-                var coin = await _walletDb.Cryptos.FindAsync(updateCryptoCoinDto.CoinId);
-                var wallet = await _walletDb.Wallets.FirstOrDefaultAsync( w => w.UserId == userId);
-                if(coin is null) { return new ResponseModel<CryptoCoinDto>("Coin not found!"); }
-                if(wallet is null) { return new ResponseModel<CryptoCoinDto>("You can't change this coin!"); }
+                var coin = await _walletDb.Cryptos
+                       .Include(c => c.Wallet)
+                       .FirstOrDefaultAsync(c => c.CoinId == updateCryptoCoinDto.CoinId);
+
+                if (coin is null){ return new ResponseModel<CryptoCoinDto>("Coin not found!"); }
+                if (coin.Wallet.UserId != userId){ return new ResponseModel<CryptoCoinDto>("You can't change this coin! It doesn't belong to your wallet."); }
 
                 coin.Quantity = updateCryptoCoinDto.Quantity;
+
+                await _walletDb.SaveChangesAsync();
 
                 var response = coin.ToCryptoCoinDto();
                 return new ResponseModel<CryptoCoinDto>(response) { IsValid = true};

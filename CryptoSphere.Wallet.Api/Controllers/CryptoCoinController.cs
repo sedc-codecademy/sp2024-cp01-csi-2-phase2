@@ -62,6 +62,35 @@ namespace CryptoSphere.Wallet.Api.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        [HttpPut]
+        public async Task<IActionResult> UpdateCoin([FromBody] UpdateCryptoCoinDto coinDto)
+        {
+            try
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (userId == null) return BadRequest("No user found!");
+                var response = await _cryptoCoinRepository.UpdateCryptoCoin(userId, coinDto);
+                return Response(response);
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpDelete("{coinId}")]
+        public async Task<IActionResult> DeleteCoin(int coinId)
+        {
+            try
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (userId == null) return BadRequest("No user found!");
+                var response = await _cryptoCoinRepository.DeleteCryptoCoin(userId, coinId);
+                return Response(response);
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
 
