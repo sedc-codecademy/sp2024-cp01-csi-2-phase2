@@ -13,8 +13,8 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
 
             builder.HasOne(w=>w.Wallet)
                 .WithMany(t=>t.Transaction)
-                .HasForeignKey(t=>t.WalletId)
-                .OnDelete(DeleteBehavior.Cascade);  
+               .HasForeignKey(t=>t.WalletId)
+              .OnDelete(DeleteBehavior.Cascade);  
 
             builder.Property(x => x.Amount)
                 .HasPrecision(18, 4)

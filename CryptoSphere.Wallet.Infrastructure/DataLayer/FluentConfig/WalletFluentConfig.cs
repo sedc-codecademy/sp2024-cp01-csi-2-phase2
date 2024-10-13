@@ -15,6 +15,11 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
                 .HasForeignKey<Entities.Wallet>(x => x.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            builder.HasMany(x => x.Cryptos)
+                .WithOne(w => w.Wallet)
+                .HasForeignKey(c => c.WalletId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             builder.Property(x => x.BalanceUSD)
                         .HasPrecision(18, 2)
                             .HasDefaultValue(100000m);

@@ -22,7 +22,6 @@ namespace CryptoSphere.Wallet.Entities
         [Required]
         [JsonIgnore]
         public ApplicationUser User { get; set; }
-        [JsonIgnore]
-        public CryptoCoin? CryptoCoins { get; set; }
+
     }
 }

@@ -8,7 +8,6 @@ namespace CryptoSphere.Wallet.Application.Common.DTOs.WalletDtos
     public class BaseWalletDto
     {
         public decimal BalanceUSD { get; set; }
-        public List<AddCryptoCoinDto>? Cryptos { get; set; }
         public WalletStatus Status { get; set; }
     }
 }

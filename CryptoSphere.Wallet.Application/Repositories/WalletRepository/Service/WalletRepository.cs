@@ -31,18 +31,6 @@ namespace CryptoSphere.Wallet.Application.Repositories.WalletRepository.Service
 
                     var wallet = addWalletDto.ToAddWalletDto();
                     wallet.UserId = userId;
-                if (wallet.Cryptos != null)
-                {
-                    foreach (var item in wallet.Cryptos)
-                    {
-                        item.UserId = userId;
-                        item.WalletId = wallet.WalletId; 
-                    }
-                }
-                else
-                {
-                    wallet.Cryptos = new List<CryptoCoin>();
-                }
                 wallet.CreatedAt = DateTime.UtcNow;
                     wallet.WalletAddress = Guid.NewGuid().ToString();
                     await _walletDb.Wallets.AddAsync(wallet);
@@ -94,7 +82,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.WalletRepository.Service
         {
             try
             {
-                var wallet = await _walletDb.Wallets.FindAsync(id);
+                var wallet = await _walletDb.Wallets.Include(x => x.Cryptos).FirstOrDefaultAsync(c => c.WalletId == id);
                 if (wallet is null) return new ResponseModel<WalletDto>("Wallet not found!");
                 var walletDto = wallet.ToWalletDto();
                 return new ResponseModel<WalletDto>(walletDto);

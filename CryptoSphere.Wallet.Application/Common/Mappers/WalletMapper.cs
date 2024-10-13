@@ -37,12 +37,7 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
             {
                 BalanceUSD = wallet.BalanceUSD,
                 WalletStatus = wallet.Status,
-                Cryptos =wallet.Cryptos.Select(x => new CryptoCoin
-                {
-                    CoinSymbol = x.CoinSymbol,
-                    Quantity = x.Quantity,
-                    ValueInUSD = x.ValueInUSD,
-                } ).ToList()
+               
                 
             };
         }

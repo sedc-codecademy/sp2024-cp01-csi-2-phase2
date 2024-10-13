@@ -11,11 +11,11 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
         {
             builder.HasKey(x => x.CoinId);
 
-            builder.HasOne(x=> x.Wallet)
-                .WithMany(x => x.Cryptos)
-                .HasForeignKey(x=>x.CoinId)
-                .OnDelete(DeleteBehavior.Cascade);  
-   
+            builder.HasOne(x => x.Wallet)
+                .WithMany(w => w.Cryptos)
+                .HasForeignKey(x => x.WalletId)  
+                .OnDelete(DeleteBehavior.Cascade);
+
             builder.Property(x => x.CoinSymbol).IsRequired().HasConversion<int>();
 
             builder.Property(x => x.Quantity).IsRequired().HasPrecision(5, 2);

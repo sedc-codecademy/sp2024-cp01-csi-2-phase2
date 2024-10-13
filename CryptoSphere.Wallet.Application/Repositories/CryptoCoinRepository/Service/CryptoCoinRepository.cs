@@ -22,11 +22,13 @@ namespace CryptoSphere.Wallet.Application.Repositories.CryptoCoinRepository.Serv
         {
             try
             {
-                var cryptoCoin = await _walletDb.Cryptos.FirstOrDefaultAsync(x => x.CoinSymbol == addCryptoCoinDto.CoinSymbol);
-                var wallet = await _walletDb.Wallets.FirstOrDefaultAsync(w => w.UserId == userId);
+
+                var wallet = await _walletDb.Wallets.Include(c => c.Cryptos)
+                    .FirstOrDefaultAsync(w => w.UserId == userId);
 
                 if(wallet is null) { return new ResponseModel<CryptoCoinDto>("You need to create a wallet first!"); }
-                if (cryptoCoin != null) { return new ResponseModel<CryptoCoinDto>("You already have this crypto currency"); }
+                if (wallet.Cryptos.Any(c => c.CoinSymbol == addCryptoCoinDto.CoinSymbol))
+                { return new ResponseModel<CryptoCoinDto>("You already have this crypto currency"); }
 
                 var coin = addCryptoCoinDto.ToAddCoinDto();
                 coin.UserId = wallet.UserId;
