@@ -2,7 +2,11 @@
 ﻿using CryptoSphere.Wallet.Application.Common.DTOs.TransactionDtos;
 using CryptoSphere.Wallet.Application.Common.Helpers;
 using CryptoSphere.Wallet.Application.Common.Interfaces;
+using CryptoSphere.Wallet.Application.Common.Mappers;
 using CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Interface;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using System.Runtime.CompilerServices;
 
 namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Service
 {
@@ -20,24 +24,86 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
             throw new NotImplementedException();
         }
 
-        public Task<ResponseModel> DeleteTransaction(string userId, int id)
+        public async Task<ResponseModel> DeleteTransaction(string userId, int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var transaction = await _walletDb.Transactions
+                                            .Include(x => x.Wallet)
+                                            .FirstOrDefaultAsync(x => x.TransactionId == id);
+
+                if (transaction == null) { return new ResponseModel<TransactionDto>("Transaction cannot be found!"); }
+                if(transaction.Wallet.UserId != userId) { return new ResponseModel<TransactionDto>("You can't delete this transaction!"); }
+                if (transaction.TransactionStatus == Entities.Enums.TransactionStatus.Completed)
+                { return new ResponseModel<TransactionDto>("You can't delete a completed transaction"); }
+
+                 _walletDb.Transactions.Remove(transaction);
+                await _walletDb.SaveChangesAsync();
+                return new ResponseModel { IsValid = true };
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
-        public Task<ResponseModel<List<TransactionDto>>> GetAllTransactions()
+        public async Task<ResponseModel<List<TransactionDto>>> GetAllTransactions()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var transactionsFromDb = await _walletDb.Transactions.Include(x => x.Wallet).ToListAsync();
+                List<TransactionDto> transactions = new List<TransactionDto>();
+                foreach(var item in transactionsFromDb) 
+                {
+                    transactions.Add(item.ToTransactionDto());
+                }
+                return new ResponseModel<List<TransactionDto>>(transactions);   
+
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
-        public Task<ResponseModel<TransactionDto>> GetTransactionById(int id)
+        public async Task<ResponseModel<TransactionDto>> GetTransactionById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var transaction = await _walletDb.Transactions.Include(x=>x.Wallet).FirstOrDefaultAsync(x=> x.TransactionId == id);
+                if(transaction == null) { return new ResponseModel<TransactionDto>("Wallet can't be found!"); }
+               var response = transaction.ToTransactionDto();
+                return new ResponseModel<TransactionDto>(response);
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
-        public Task<ResponseModel<TransactionDto>> UpdateTransaction(string userId, TransactionDto updateTransactionDto)
+        public async Task<ResponseModel<TransactionDto>> UpdateTransaction(string userId,int id, UpdateTransactionDto updateTransactionDto)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                var transaction = await _walletDb.Transactions
+                                            .Include(x => x.Wallet)
+                                            .FirstOrDefaultAsync(x => x.TransactionId == id);
+
+                if (transaction == null) { return new ResponseModel<TransactionDto>("Transaction cannot be found!"); }
+                if (transaction.Wallet.UserId != userId) { return new ResponseModel<TransactionDto>("You can't update this transaction!"); }
+                if (transaction.TransactionStatus == Entities.Enums.TransactionStatus.Completed)
+                { return new ResponseModel<TransactionDto>("You can't update a completed transaction"); }
+
+                transaction.TransactionDate = DateTime.Now;
+                transaction.Amount = updateTransactionDto.Amount;
+                transaction.TransactionType = updateTransactionDto.TransactionType;
+
+                var response = transaction.ToTransactionDto();
+                return new ResponseModel<TransactionDto>(response) { IsValid = true };
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

@@ -12,9 +12,14 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
             builder.HasKey(x => x.TransactionId);
 
             builder.HasOne(w=>w.Wallet)
-                .WithMany(t=>t.Transaction)
+                .WithMany(t=>t.Transactions)
                .HasForeignKey(t=>t.WalletId)
-              .OnDelete(DeleteBehavior.Cascade);  
+              .OnDelete(DeleteBehavior.NoAction);
+
+            builder.HasOne(c => c.CryptoCoin)
+                .WithMany(t => t.Transactions)
+                .HasForeignKey(x => x.CryptoCoinId)
+           .OnDelete(DeleteBehavior.Cascade);
 
             builder.Property(x => x.Amount)
                 .HasPrecision(18, 4)
@@ -24,13 +29,13 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
                 .IsRequired()
                 .HasMaxLength(50);
 
-            builder.Property(x => x.CoinSymbol).IsRequired();
+            builder.Property(x => x.CryptoCoinId).IsRequired();
 
             builder.Property(x => x.TransactionStatus)
                 .HasMaxLength(20)
                 .IsRequired();
 
-            builder.Property(x => x.TransactionDate).HasDefaultValue(DateTime.Now)
+            builder.Property(x => x.TransactionDate)
                 .IsRequired();
 
             builder.HasIndex(x => x.TransactionDate);

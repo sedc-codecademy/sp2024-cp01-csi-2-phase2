@@ -167,7 +167,7 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     BalanceUSD = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false, defaultValue: 100000m),
                     WalletAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WalletStatus = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 10, 13, 20, 28, 35, 493, DateTimeKind.Utc).AddTicks(5177)),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 10, 14, 1, 25, 48, 107, DateTimeKind.Utc).AddTicks(6455)),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -211,27 +211,26 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     TransactionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     WalletId = table.Column<int>(type: "int", nullable: false),
-                    CoinSymbol = table.Column<int>(type: "int", nullable: false),
+                    CryptoCoinId = table.Column<int>(type: "int", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,4)", precision: 18, scale: 4, nullable: false),
                     TransactionType = table.Column<int>(type: "int", maxLength: 50, nullable: false),
-                    TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 10, 13, 22, 28, 35, 491, DateTimeKind.Local).AddTicks(9643)),
-                    TransactionStatus = table.Column<int>(type: "int", maxLength: 20, nullable: false),
-                    CryptoCoinCoinId = table.Column<int>(type: "int", nullable: true)
+                    TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TransactionStatus = table.Column<int>(type: "int", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Transactions", x => x.TransactionId);
                     table.ForeignKey(
-                        name: "FK_Transactions_Cryptos_CryptoCoinCoinId",
-                        column: x => x.CryptoCoinCoinId,
+                        name: "FK_Transactions_Cryptos_CryptoCoinId",
+                        column: x => x.CryptoCoinId,
                         principalTable: "Cryptos",
-                        principalColumn: "CoinId");
+                        principalColumn: "CoinId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Transactions_Wallets_WalletId",
                         column: x => x.WalletId,
                         principalTable: "Wallets",
-                        principalColumn: "WalletId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "WalletId");
                 });
 
             migrationBuilder.CreateIndex(
@@ -279,9 +278,9 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                 column: "WalletId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Transactions_CryptoCoinCoinId",
+                name: "IX_Transactions_CryptoCoinId",
                 table: "Transactions",
-                column: "CryptoCoinCoinId");
+                column: "CryptoCoinId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Transactions_TransactionDate",

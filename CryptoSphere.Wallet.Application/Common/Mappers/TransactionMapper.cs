@@ -10,10 +10,9 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
         {
             return new TransactionDto
             {
-                CryptoCoinSymbol = transaction.CoinSymbol,
+                CryptoCoinId = transaction.CryptoCoinId,
                 Amount = transaction.Amount,
                 TransactionType = transaction.TransactionType,
-                TransactionDate = transaction.TransactionDate,
                 Status = transaction.TransactionStatus,
                 WalletId = transaction.WalletId
             };

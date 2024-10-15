@@ -17,8 +17,8 @@ namespace CryptoSphere.Wallet.Entities
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
-        [JsonIgnore]
-        public IEnumerable<Transaction> Transaction { get; set; }
+        
+        public ICollection<Transaction> Transactions { get; set; }
         [Required]
         [JsonIgnore]
         public ApplicationUser User { get; set; }

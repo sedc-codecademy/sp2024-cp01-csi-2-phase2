@@ -15,7 +15,7 @@ namespace CryptoSphere.Wallet.Entities
 
         [JsonIgnore]
         public Wallet? Wallet { get; set; }
-        [JsonIgnore]
+  
         public IEnumerable<Transaction>? Transactions { get; set; }
     }
 }
