@@ -1,12 +1,12 @@
 
-﻿using CryptoSphere.Wallet.Application.Common.DTOs.TransactionDtos;
+using CryptoSphere.Wallet.Application.Common.DTOs.TransactionDtos;
 using CryptoSphere.Wallet.Application.Common.Helpers;
 using CryptoSphere.Wallet.Application.Common.Interfaces;
 using CryptoSphere.Wallet.Application.Common.Mappers;
 using CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Interface;
+using CryptoSphere.Wallet.Entities;
+using CryptoSphere.Wallet.Entities.Enums;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
-using System.Runtime.CompilerServices;
 
 namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Service
 {
@@ -19,9 +19,100 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
             _walletDb = walletDb;
         }
 
-        public Task<ResponseModel<TransactionDto>> AddTransaction(string userId, BaseTransactionDto addTransactionDto)
+        public async Task<ResponseModel<TransactionDto>> AddTransaction(string userId, AddTransactionDto addTransactionDto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                //Fetching and handling the wallet of the user creating the wallet
+                var senderWallet = await _walletDb.Wallets
+                                            .FirstOrDefaultAsync(w => w.WalletId == addTransactionDto.SenderWalletId);
+                if(senderWallet == null) { return new ResponseModel<TransactionDto>("No wallet found!"); }
+                if (senderWallet.UserId != userId) { return new ResponseModel<TransactionDto>("You can't add transactions to this wallet"); }
+
+                //Fetching and handling the reciever wallet if Transaction type is Transfer
+                Entities.Wallet receiverWallet = null;
+                if (addTransactionDto.TransactionType == Entities.Enums.TransactionType.Transfer)
+                {
+                    receiverWallet = await _walletDb.Wallets.FirstOrDefaultAsync(w => w.WalletId == addTransactionDto.SenderWalletId);
+                    if (receiverWallet == null)
+                    {
+                        return new ResponseModel<TransactionDto>("Receiver wallet does not exist.");
+                    }
+                }
+
+                //switch statement for different types of transactions
+                switch(addTransactionDto.TransactionType)
+                {
+                    case TransactionType.Buy:
+
+                        if(senderWallet.BalanceUSD < addTransactionDto.Amount) { return new ResponseModel<TransactionDto>("Insufficient balance to buy this coin!"); }
+
+                        senderWallet.BalanceUSD -= addTransactionDto.Amount;
+                        
+                        break;
+
+                    case TransactionType.Sell:
+
+                        var coin = senderWallet.Cryptos.FirstOrDefault(c => c.CoinSymbol == addTransactionDto.CoinSymbol);
+                        if(coin is null) { return new ResponseModel<TransactionDto>("You don't have this coin in your wallet!"); }
+                        if(coin.Quantity < addTransactionDto.Amount) { return new ResponseModel<TransactionDto>("Insufficient crypto currency to sell! "); }
+
+                        coin.Quantity -= addTransactionDto.Amount;
+                        senderWallet.BalanceUSD += addTransactionDto.Amount;
+                        break;
+
+                    case TransactionType.Transfer:
+
+                        var senderCoin = senderWallet.Cryptos.FirstOrDefault(c => c.CoinSymbol == addTransactionDto.CoinSymbol);
+                        if (senderCoin is null) { return new ResponseModel<TransactionDto>("You don't have this coin in your wallet!"); }
+                        if (senderCoin.Quantity < addTransactionDto.Amount) { return new ResponseModel<TransactionDto>("Insufficient crypto currency to transfer! "); }
+                        senderCoin.Quantity -= addTransactionDto.Amount;
+
+                        var receiverCoin = receiverWallet.Cryptos.FirstOrDefault(c => c.CoinSymbol == addTransactionDto.CoinSymbol);
+
+                        if (receiverCoin is null)
+                        {
+                            receiverWallet.Cryptos.Add(new Entities.CryptoCoin
+                            {
+                                CoinSymbol = addTransactionDto.CoinSymbol,
+                                Quantity = addTransactionDto.Amount,
+                            });
+                        }
+                        else
+                        {
+                            receiverCoin.Quantity += addTransactionDto.Amount;
+                        }
+
+                            break;
+                    default:
+                        return new ResponseModel<TransactionDto>("Invalid transaction type");
+
+                }
+
+                //Creating the transaction model
+                var transaction = new Transaction
+                {
+                    SenderWalletId = senderWallet.WalletId,
+                    ReceiverWalletId = receiverWallet.WalletId,
+                    CoinSymbol = addTransactionDto.CoinSymbol,
+                    Amount = addTransactionDto.Amount,
+                    TransactionDate = DateTime.UtcNow,
+                    TransactionStatus = TransactionStatus.Completed,
+                    TransactionType = addTransactionDto.TransactionType
+
+                };
+                //Adding to te DB,Saving,mapping to TransactionDto and returning a validation message
+                await _walletDb.Transactions.AddAsync(transaction);
+
+                await _walletDb.SaveChangesAsync();
+
+                var response = transaction.ToTransactionDto();
+                return new ResponseModel<TransactionDto>(response) { IsValid = true };
+
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<ResponseModel> DeleteTransaction(string userId, int id)

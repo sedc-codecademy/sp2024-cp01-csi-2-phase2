@@ -13,7 +13,7 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
 
             builder.HasOne(w=>w.Wallet)
                 .WithMany(t=>t.Transactions)
-               .HasForeignKey(t=>t.WalletId)
+               .HasForeignKey(t=>t.ReceiverWalletId)
               .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(c => c.CryptoCoin)

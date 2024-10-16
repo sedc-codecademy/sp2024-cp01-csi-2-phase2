@@ -7,7 +7,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Int
     {
         Task<ResponseModel<List<TransactionDto>>> GetAllTransactions();
         Task<ResponseModel<TransactionDto>> GetTransactionById(int id);
-        Task<ResponseModel<TransactionDto>> AddTransaction(string userId, BaseTransactionDto addTransactionDto);
+        Task<ResponseModel<TransactionDto>> AddTransaction(string userId, AddTransactionDto addTransactionDto);
         Task<ResponseModel<TransactionDto>> UpdateTransaction(string userId,int id, UpdateTransactionDto updateTransactionDto);
         Task<ResponseModel> DeleteTransaction(string userId, int id);
     }

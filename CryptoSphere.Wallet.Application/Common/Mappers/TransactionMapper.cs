@@ -9,12 +9,13 @@ namespace CryptoSphere.Wallet.Application.Common.Mappers
         public static TransactionDto ToTransactionDto(this Transaction transaction)
         {
             return new TransactionDto
-            {
-                CryptoCoinId = transaction.CryptoCoinId,
+            {  
                 Amount = transaction.Amount,
                 TransactionType = transaction.TransactionType,
                 Status = transaction.TransactionStatus,
-                WalletId = transaction.WalletId
+                WalletId = transaction.SenderWalletId,
+                CoinSymbol = transaction.CoinSymbol,
+                TransactionDate = transaction.TransactionDate,
             };
         }
     }
