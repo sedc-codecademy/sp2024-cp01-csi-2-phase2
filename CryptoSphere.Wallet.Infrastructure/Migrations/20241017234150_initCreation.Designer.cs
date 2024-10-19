@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CryptoSphere.Wallet.Infrastructure.Migrations
 {
     [DbContext(typeof(WalletDbContext))]
-    [Migration("20241014012548_initCreation")]
+    [Migration("20241017234150_initCreation")]
     partial class initCreation
     {
         /// <inheritdoc />
@@ -139,7 +139,16 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         .HasPrecision(18, 4)
                         .HasColumnType("decimal(18,4)");
 
-                    b.Property<int>("CryptoCoinId")
+                    b.Property<int>("CoinSymbol")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CryptoCoinCoinId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ReceiverWalletId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SenderWalletId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("TransactionDate")
@@ -153,16 +162,13 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("int");
 
-                    b.Property<int>("WalletId")
-                        .HasColumnType("int");
-
                     b.HasKey("TransactionId");
 
-                    b.HasIndex("CryptoCoinId");
+                    b.HasIndex("CryptoCoinCoinId");
+
+                    b.HasIndex("ReceiverWalletId");
 
                     b.HasIndex("TransactionDate");
-
-                    b.HasIndex("WalletId");
 
                     b.ToTable("Transactions");
                 });
@@ -184,7 +190,7 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 10, 14, 1, 25, 48, 107, DateTimeKind.Utc).AddTicks(6455));
+                        .HasDefaultValue(new DateTime(2024, 10, 17, 23, 41, 49, 294, DateTimeKind.Utc).AddTicks(5488));
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -355,15 +361,12 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                 {
                     b.HasOne("CryptoSphere.Wallet.Entities.CryptoCoin", "CryptoCoin")
                         .WithMany("Transactions")
-                        .HasForeignKey("CryptoCoinId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CryptoCoinCoinId");
 
                     b.HasOne("CryptoSphere.Wallet.Entities.Wallet", "Wallet")
                         .WithMany("Transactions")
-                        .HasForeignKey("WalletId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .HasForeignKey("ReceiverWalletId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("CryptoCoin");
 

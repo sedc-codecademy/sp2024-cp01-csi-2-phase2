@@ -9,8 +9,7 @@ namespace CryptoSphere.Wallet.Entities
     {
         public int TransactionId { get; set; }
         public int SenderWalletId { get; set; }
-        public int ReceiverWalletId {  get; set; }
-        public int CryptoCoinId {  get; set; }
+        public int? ReceiverWalletId {  get; set; }
         public CryptoCoinSymbol CoinSymbol {  get; set; }
         public decimal Amount { get; set; }
         public TransactionType TransactionType { get; set; }

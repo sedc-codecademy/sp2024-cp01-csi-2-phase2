@@ -24,7 +24,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
             try
             {
                 //Fetching and handling the wallet of the user creating the wallet
-                var senderWallet = await _walletDb.Wallets
+                var senderWallet = await _walletDb.Wallets.Include(x=> x.Cryptos)
                                             .FirstOrDefaultAsync(w => w.WalletId == addTransactionDto.SenderWalletId);
                 if(senderWallet == null) { return new ResponseModel<TransactionDto>("No wallet found!"); }
                 if (senderWallet.UserId != userId) { return new ResponseModel<TransactionDto>("You can't add transactions to this wallet"); }
@@ -33,7 +33,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
                 Entities.Wallet receiverWallet = null;
                 if (addTransactionDto.TransactionType == Entities.Enums.TransactionType.Transfer)
                 {
-                    receiverWallet = await _walletDb.Wallets.FirstOrDefaultAsync(w => w.WalletId == addTransactionDto.SenderWalletId);
+                    receiverWallet = await _walletDb.Wallets.Include(x=>x.Cryptos).FirstOrDefaultAsync(w => w.WalletId == addTransactionDto.RecieverWalletId);
                     if (receiverWallet == null)
                     {
                         return new ResponseModel<TransactionDto>("Receiver wallet does not exist.");
@@ -58,7 +58,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
                         if(coin.Quantity < addTransactionDto.Amount) { return new ResponseModel<TransactionDto>("Insufficient crypto currency to sell! "); }
 
                         coin.Quantity -= addTransactionDto.Amount;
-                        senderWallet.BalanceUSD += addTransactionDto.Amount;
+                        senderWallet.BalanceUSD += (addTransactionDto.Amount * coin.ValueInUSD);
                         break;
 
                     case TransactionType.Transfer:
@@ -74,6 +74,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
                         {
                             receiverWallet.Cryptos.Add(new Entities.CryptoCoin
                             {
+                                UserId = receiverWallet.UserId,
                                 CoinSymbol = addTransactionDto.CoinSymbol,
                                 Quantity = addTransactionDto.Amount,
                             });
@@ -92,12 +93,13 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
                 //Creating the transaction model
                 var transaction = new Transaction
                 {
+                    Wallet = senderWallet,
                     SenderWalletId = senderWallet.WalletId,
-                    ReceiverWalletId = receiverWallet.WalletId,
+                    ReceiverWalletId = addTransactionDto.TransactionType == TransactionType.Transfer
+                              ? receiverWallet.WalletId : (int?)null,
                     CoinSymbol = addTransactionDto.CoinSymbol,
                     Amount = addTransactionDto.Amount,
                     TransactionDate = DateTime.UtcNow,
-                    TransactionStatus = TransactionStatus.Completed,
                     TransactionType = addTransactionDto.TransactionType
 
                 };
@@ -160,7 +162,7 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
             try
             {
                 var transaction = await _walletDb.Transactions.Include(x=>x.Wallet).FirstOrDefaultAsync(x=> x.TransactionId == id);
-                if(transaction == null) { return new ResponseModel<TransactionDto>("Wallet can't be found!"); }
+                if(transaction == null) { return new ResponseModel<TransactionDto>("Transaction can't be found!"); }
                var response = transaction.ToTransactionDto();
                 return new ResponseModel<TransactionDto>(response);
             }catch(Exception ex)
@@ -185,7 +187,6 @@ namespace CryptoSphere.Wallet.Application.Repositories.TransactionRepository.Ser
 
                 transaction.TransactionDate = DateTime.Now;
                 transaction.Amount = updateTransactionDto.Amount;
-                transaction.TransactionType = updateTransactionDto.TransactionType;
 
                 var response = transaction.ToTransactionDto();
                 return new ResponseModel<TransactionDto>(response) { IsValid = true };

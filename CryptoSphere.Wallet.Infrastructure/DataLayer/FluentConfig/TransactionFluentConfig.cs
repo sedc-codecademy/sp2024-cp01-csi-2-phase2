@@ -16,10 +16,6 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
                .HasForeignKey(t=>t.ReceiverWalletId)
               .OnDelete(DeleteBehavior.NoAction);
 
-            builder.HasOne(c => c.CryptoCoin)
-                .WithMany(t => t.Transactions)
-                .HasForeignKey(x => x.CryptoCoinId)
-           .OnDelete(DeleteBehavior.Cascade);
 
             builder.Property(x => x.Amount)
                 .HasPrecision(18, 4)
@@ -29,7 +25,6 @@ namespace CryptoSphere.Wallet.Infrastructure.DataLayer.FluentConfig
                 .IsRequired()
                 .HasMaxLength(50);
 
-            builder.Property(x => x.CryptoCoinId).IsRequired();
 
             builder.Property(x => x.TransactionStatus)
                 .HasMaxLength(20)

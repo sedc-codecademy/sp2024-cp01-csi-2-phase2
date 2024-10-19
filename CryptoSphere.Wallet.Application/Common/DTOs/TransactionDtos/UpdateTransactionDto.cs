@@ -10,6 +10,6 @@ namespace CryptoSphere.Wallet.Application.Common.DTOs.TransactionDtos
     public class UpdateTransactionDto
     {
         public decimal Amount { get; set; }
-        public TransactionType TransactionType { get; set; }
+
     }
 }

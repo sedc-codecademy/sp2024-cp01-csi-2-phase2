@@ -10,6 +10,5 @@ namespace CryptoSphere.Wallet.Application.Common.DTOs.TransactionDtos
     {
         public int SenderWalletId { get; set; }
         public int? RecieverWalletId {  get; set; }
-        public string? Description {  get; set; }
     }
 }

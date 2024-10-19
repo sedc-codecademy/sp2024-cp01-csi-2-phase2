@@ -139,10 +139,10 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.Property<int>("CoinSymbol")
                         .HasColumnType("int");
 
-                    b.Property<int>("CryptoCoinId")
+                    b.Property<int?>("CryptoCoinCoinId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReceiverWalletId")
+                    b.Property<int?>("ReceiverWalletId")
                         .HasColumnType("int");
 
                     b.Property<int>("SenderWalletId")
@@ -161,7 +161,7 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
 
                     b.HasKey("TransactionId");
 
-                    b.HasIndex("CryptoCoinId");
+                    b.HasIndex("CryptoCoinCoinId");
 
                     b.HasIndex("ReceiverWalletId");
 
@@ -187,7 +187,7 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 10, 16, 1, 21, 56, 716, DateTimeKind.Utc).AddTicks(5604));
+                        .HasDefaultValue(new DateTime(2024, 10, 17, 23, 41, 49, 294, DateTimeKind.Utc).AddTicks(5488));
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -358,15 +358,12 @@ namespace CryptoSphere.Wallet.Infrastructure.Migrations
                 {
                     b.HasOne("CryptoSphere.Wallet.Entities.CryptoCoin", "CryptoCoin")
                         .WithMany("Transactions")
-                        .HasForeignKey("CryptoCoinId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CryptoCoinCoinId");
 
                     b.HasOne("CryptoSphere.Wallet.Entities.Wallet", "Wallet")
                         .WithMany("Transactions")
                         .HasForeignKey("ReceiverWalletId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("CryptoCoin");
 
